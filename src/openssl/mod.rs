@@ -227,7 +227,7 @@ impl ECVRF {
     /// # Returns
     ///
     /// * If successful, the `BigNum` representing the nonce.
-    fn generate_nonce(&mut self, secret_key: &BigNum, data: &[u8]) -> Result<BigNum, Error> {
+    pub fn generate_nonce(&mut self, secret_key: &BigNum, data: &[u8]) -> Result<BigNum, Error> {
         // Bits to octets from data - bits2octets(h1)
         // We follow the new VRF-draft-05 in which the input is hashed`
         let data_hash = hash(self.hasher, &data)?;
